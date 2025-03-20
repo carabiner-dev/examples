@@ -1,0 +1,119 @@
+{
+  "predicateType": "http://github.com/carabiner-dev/snappy/specs/mfa.yaml",
+  "predicate": {
+    "id": "github.com/openvex#mfa",
+    "name": "github.com/openvex",
+    "url": "https://github.com/openvex",
+    "type": "http://github.com/carabiner-dev/snappy/specs/mfa.yaml",
+    "metadata": {
+      "date": "2025-03-04T10:20:12.730249-05:00",
+      "endpoint": "graphql",
+      "method": "POST"
+    },
+    "headers": {
+      "Date": "Tue, 04 Mar 2025 15:20:12 GMT",
+      "Server": "github.com",
+      "X-Accepted-Oauth-Scopes": "repo",
+      "X-Github-Request-Id": "C2E9:2AA81C:6A78C:D5B5D:67C71A2C"
+    },
+    "values": {
+      "data": {
+        "organization": {
+          "login": "openvex",
+          "membersWithRole": {
+            "edges": [
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "amouat"
+                },
+                "role": "MEMBER"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "wagoodman"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "kaniini"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "dlorenc"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "lumjjb"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "puerco"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "cpanato"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "tracymiranda"
+                },
+                "role": "MEMBER"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "luhring"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "patflynn"
+                },
+                "role": "MEMBER"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "rnjudge"
+                },
+                "role": "ADMIN"
+              }
+            ],
+            "totalCount": 11
+          }
+        }
+      }
+    }
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "github.com/openvex",
+      "uri": "https://github.com/openvex",
+      "digest": {
+        "sha256": "1eca7cf38a05556f255de6ce81cc41dc134340384ef2e8a3ad9efb9531ec39e2"
+      }
+    }
+  ]
+}

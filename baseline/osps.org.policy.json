@@ -1,0 +1,56 @@
+{
+    "id": "OSPS",
+    "metadata": {
+        "runtime": "cel@v0"
+    },
+    "policies": [
+        {
+            "id": "AC-01",
+            "meta": {
+                "description": "The project's version control system MUST require multi-factor authentication that does not include SMS ",
+                "runtime": "cel@v0",
+                "assert_mode": "AND",
+                "controls": [
+                    { "class": "OSPS", "id": "AC-01" }
+                ]
+            },
+            "identities": [
+                {
+                    "sigstore": {
+                        "issuer": "https://accounts.google.com",
+                        "identity": "puerco@carabiner.dev"
+                    }
+                }
+            ],
+            "tenets": [
+                {
+                    "code": "size(predicates) > 0",
+                    "predicates": {
+                        "types": ["http://github.com/carabiner-dev/snappy/specs/mfa.yaml"]
+                    },
+                    "assessment": {
+                        "message": "Found attested data about MFA configuration"
+                    }
+                },
+                {
+                    "code": "outputs[\"members\"].all(member, member.hasTwoFactorEnabled)",
+                    "predicates": {
+                        "types": ["http://github.com/carabiner-dev/snappy/specs/mfa.yaml"]
+                    },
+                    "outputs": {
+                        "members": {
+                            "code": "has(predicates[0].data.values.data.organization.membersWithRole.edges) ? predicates[0].data.values.data.organization.membersWithRole.edges : false"
+                        }
+                    },
+                    "assessment": {
+                        "message": "Multi-factor authentication is enabled for all members in the organization"
+                    },
+                    "error": {
+                        "message": "Multifactor authentication is not enabled for some members",
+                        "guidance": "Enable MFA in the GitHub organization settings to force all members to turn it on"
+                    }
+                }
+            ]            
+        }
+    ]
+}

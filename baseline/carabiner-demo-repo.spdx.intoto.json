@@ -1,0 +1,477 @@
+{
+  "predicateType": "https://spdx.dev/Document",
+  "predicate": {
+    "spdxVersion": "SPDX-2.3",
+    "dataLicense": "CC0-1.0",
+    "SPDXID": "SPDXRef-DOCUMENT",
+    "name": "",
+    "documentNamespace": "4fc667d9-867f-4256-89b9-6d6dd1d7b59e",
+    "creationInfo": {
+      "licenseListVersion": "3.20",
+      "creators": [
+        "Tool: protobom-devel",
+        "Tool: unpack-devel"
+      ],
+      "created": "2025-03-04T17:18:59Z"
+    },
+    "packages": [
+      {
+        "name": "github.com/carabiner-dev/demo-repo",
+        "SPDXID": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "versionInfo": "v0.0.1-pre15.1+415b7355",
+        "downloadLocation": "NOASSERTION",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/github.com/carabiner-dev/demo-repo@v0.0.1-pre15.1+415b7355"
+          }
+        ]
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "SPDXID": "SPDXRef-8c820f85-f510-441b-97b2-375e834336ad",
+        "versionInfo": "v1.9.3",
+        "downloadLocation": "https://proxy.golang.org/github.com/sirupsen/logrus/@v/v1.9.3.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/github.com/sirupsen/logrus@v1.9.3"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "go",
+        "SPDXID": "SPDXRef-0bb15ec8-b206-44ed-8900-0e96605c8e79",
+        "versionInfo": "1.23.2",
+        "downloadLocation": "https://proxy.golang.org/go/@v/1.23.2.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/go@1.23.2"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "SPDXID": "SPDXRef-ef6bf084-62ef-43f8-91e9-231dd4c1065e",
+        "versionInfo": "v0.0.0-20220715151400-c0bba94af5f8",
+        "downloadLocation": "https://proxy.golang.org/golang.org/x/sys/@v/v0.0.0-20220715151400-c0bba94af5f8.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/golang.org/x/sys@v0.0.0-20220715151400-c0bba94af5f8"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "github.com/davecgh/go-spew",
+        "SPDXID": "SPDXRef-eda3bf15-65b3-4e84-adc9-2def73b2cf96",
+        "versionInfo": "v1.1.1",
+        "downloadLocation": "https://proxy.golang.org/github.com/davecgh/go-spew/@v/v1.1.1.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/github.com/davecgh/go-spew@v1.1.1"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "SPDXID": "SPDXRef-7d9e6eac-c2c2-4071-ab18-f38afffcfb03",
+        "versionInfo": "v1.7.0",
+        "downloadLocation": "https://proxy.golang.org/github.com/stretchr/testify/@v/v1.7.0.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/github.com/stretchr/testify@v1.7.0"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "github.com/davecgh/go-spew",
+        "SPDXID": "SPDXRef-d85aaebd-ef8e-4761-bd75-ae9c97075225",
+        "versionInfo": "v1.1.0",
+        "downloadLocation": "https://proxy.golang.org/github.com/davecgh/go-spew/@v/v1.1.0.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/github.com/davecgh/go-spew@v1.1.0"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "github.com/pmezard/go-difflib",
+        "SPDXID": "SPDXRef-d88e2294-f237-424a-8079-9ac569a2e8ce",
+        "versionInfo": "v1.0.0",
+        "downloadLocation": "https://proxy.golang.org/github.com/pmezard/go-difflib/@v/v1.0.0.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/github.com/pmezard/go-difflib@v1.0.0"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "github.com/stretchr/objx",
+        "SPDXID": "SPDXRef-76c2650a-959e-4d61-a021-a73cb85021f6",
+        "versionInfo": "v0.1.0",
+        "downloadLocation": "https://proxy.golang.org/github.com/stretchr/objx/@v/v0.1.0.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/github.com/stretchr/objx@v0.1.0"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "SPDXID": "SPDXRef-cbe229a8-d69d-48b2-b5de-82e8893e90d4",
+        "versionInfo": "v3.0.0-20200313102051-9f266ea9e77c",
+        "downloadLocation": "https://proxy.golang.org/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "gopkg.in/check.v1",
+        "SPDXID": "SPDXRef-2349a059-1ec4-4f6b-b9a5-05f47fa455e6",
+        "versionInfo": "v0.0.0-20161208181325-20d25e280405",
+        "downloadLocation": "https://proxy.golang.org/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      },
+      {
+        "name": "toolchain",
+        "SPDXID": "SPDXRef-ccb4a354-6122-4662-bfcf-a4e3a52637b6",
+        "versionInfo": "go1.23.2",
+        "downloadLocation": "https://proxy.golang.org/toolchain/@v/go1.23.2.zip",
+        "filesAnalyzed": false,
+        "externalRefs": [
+          {
+            "referenceCategory": "PACKAGE-MANAGER",
+            "referenceType": "purl",
+            "referenceLocator": "pkg:golang/toolchain@go1.23.2"
+          }
+        ],
+        "primaryPackagePurpose": "LIBRARY"
+      }
+    ],
+    "files": [
+      {
+        "fileName": ".github/workflows/attest-github.yaml",
+        "SPDXID": "SPDXRef-a345d3dd-10e6-4248-acd9-f1eb2d2932a3",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "3859c3e849f93fe2c789d2c138fc7b7086573583"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "d13c1c4de9d1f5616bc6b00a6b1ee4ab6d723f9055ada53e63800730633e287a"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": ".gitignore",
+        "SPDXID": "SPDXRef-b984c542-8b02-4ae9-a72d-bd81c0b5550a",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "364d43d75eec3c472eedee2a5ae7813dcc8e39ab"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "b319f85e4a246c38474a242ecaee46ca514c4abcfae781f0f7e2a7a58b3e5a4f"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": "LICENSE",
+        "SPDXID": "SPDXRef-bd90823c-8e35-4d6f-b911-cb08a938a1cc",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "7df059597099bb7dcf25d2a9aedfaf4465f72d8d"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": ".github/workflows/unpack-it.yaml",
+        "SPDXID": "SPDXRef-3c287f8e-70ea-4dfd-a41c-e46a35334b2c",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "bb5bc13ba6a31cb11d8db907e8818d6661ad321c"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "5ef506defa092129631f555b028e910124411bb1b33798c8971c4ec4fab877bc"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": ".github/workflows/release.yaml",
+        "SPDXID": "SPDXRef-9119b170-52e1-4506-9ec9-f5d4f9e6db23",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "d3f410995b8493e116d2211705465689e6312176"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "a86762019479e252b32b131c555af0086ee4f5cb39f4b0f196df13a872abddc3"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": "go.mod",
+        "SPDXID": "SPDXRef-0ba1c2c3-d440-4f39-8d76-ca5fbdbcb33c",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "0cbce6fd280435aef3fc0be2c4ce7f4e302c678c"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "c4758269bfcba476213e85835e927936f3f000f7a7fb12c256122a3fa2be8a44"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": "go.sum",
+        "SPDXID": "SPDXRef-bfaaa6d2-0535-44db-bf0d-fe60136c008c",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "a469e1e3461fd5d6322fe00c4fa8643aa83bbeae"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "f6efadaf3251af4a692e345f4ef6f1e83c24b3da22c9458d606dc0fd3397ef5b"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": "main.go",
+        "SPDXID": "SPDXRef-323594ee-224e-41df-a859-decc10feee92",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "8e924d052f4a3add93bc8a1d6e713ec8a62b971e"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "32af8a6b9e8b3439871e23a6a5127a5ccb505c2f82cbb9b292feb57b1bc9ced9"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": "README.md",
+        "SPDXID": "SPDXRef-7c964c01-979c-42bf-9312-2bbb662bbc75",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "1a221387804b085a32bd8d9fcd8f3b976db4d392"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "4abf41e6e13a3c2efd79f1b32464e50dc90f85e665fa13f9b49278db719d0627"
+          }
+        ],
+        "copyrightText": "NONE"
+      },
+      {
+        "fileName": "SECURITY-INSIGHTS.yml",
+        "SPDXID": "SPDXRef-dc25cf56-4972-4184-9c9f-353539f53766",
+        "checksums": [
+          {
+            "algorithm": "SHA1",
+            "checksumValue": "7800e1fd656066b2d9351f396c7f83a31817906f"
+          },
+          {
+            "algorithm": "SHA256",
+            "checksumValue": "0d0ddbb18fb97f5b7a91b8573842dab581035bb58949a5ebb48304f848b563e1"
+          }
+        ],
+        "copyrightText": "NONE"
+      }
+    ],
+    "relationships": [
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-8c820f85-f510-441b-97b2-375e834336ad",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-0bb15ec8-b206-44ed-8900-0e96605c8e79",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-ef6bf084-62ef-43f8-91e9-231dd4c1065e",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-8c820f85-f510-441b-97b2-375e834336ad",
+        "relatedSpdxElement": "SPDXRef-eda3bf15-65b3-4e84-adc9-2def73b2cf96",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-8c820f85-f510-441b-97b2-375e834336ad",
+        "relatedSpdxElement": "SPDXRef-7d9e6eac-c2c2-4071-ab18-f38afffcfb03",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-8c820f85-f510-441b-97b2-375e834336ad",
+        "relatedSpdxElement": "SPDXRef-ef6bf084-62ef-43f8-91e9-231dd4c1065e",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-7d9e6eac-c2c2-4071-ab18-f38afffcfb03",
+        "relatedSpdxElement": "SPDXRef-d85aaebd-ef8e-4761-bd75-ae9c97075225",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-7d9e6eac-c2c2-4071-ab18-f38afffcfb03",
+        "relatedSpdxElement": "SPDXRef-d88e2294-f237-424a-8079-9ac569a2e8ce",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-7d9e6eac-c2c2-4071-ab18-f38afffcfb03",
+        "relatedSpdxElement": "SPDXRef-76c2650a-959e-4d61-a021-a73cb85021f6",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-7d9e6eac-c2c2-4071-ab18-f38afffcfb03",
+        "relatedSpdxElement": "SPDXRef-cbe229a8-d69d-48b2-b5de-82e8893e90d4",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-cbe229a8-d69d-48b2-b5de-82e8893e90d4",
+        "relatedSpdxElement": "SPDXRef-2349a059-1ec4-4f6b-b9a5-05f47fa455e6",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-0bb15ec8-b206-44ed-8900-0e96605c8e79",
+        "relatedSpdxElement": "SPDXRef-ccb4a354-6122-4662-bfcf-a4e3a52637b6",
+        "relationshipType": "DEPENDS_ON"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-a345d3dd-10e6-4248-acd9-f1eb2d2932a3",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-b984c542-8b02-4ae9-a72d-bd81c0b5550a",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-bd90823c-8e35-4d6f-b911-cb08a938a1cc",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-3c287f8e-70ea-4dfd-a41c-e46a35334b2c",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-9119b170-52e1-4506-9ec9-f5d4f9e6db23",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-0ba1c2c3-d440-4f39-8d76-ca5fbdbcb33c",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-bfaaa6d2-0535-44db-bf0d-fe60136c008c",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-323594ee-224e-41df-a859-decc10feee92",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-7c964c01-979c-42bf-9312-2bbb662bbc75",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relatedSpdxElement": "SPDXRef-dc25cf56-4972-4184-9c9f-353539f53766",
+        "relationshipType": "CONTAINS"
+      },
+      {
+        "spdxElementId": "SPDXRef-DOCUMENT",
+        "relatedSpdxElement": "SPDXRef-f981d7f5-19e3-402c-8c27-57cf1ce093a3",
+        "relationshipType": "DESCRIBES"
+      }
+    ]
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "pkg:golang/github.com/carabiner-dev/demo-repo@v0.0.1-pre15.1+415b7355",
+      "digest": {
+        "sha1": "415b73555cea15d55a6508673a9c63b3f8bdf628"
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "predicateType": "http://github.com/carabiner-dev/snappy/specs/org.yaml",
+  "predicate": {
+    "id": "github.com/carabiner-dev",
+    "name": "github.com/carabiner-dev",
+    "url": "https://github.com/carabiner-dev",
+    "type": "http://github.com/carabiner-dev/snappy/specs/org.yaml",
+    "metadata": {
+      "date": "2025-03-04T10:29:29.952525-05:00",
+      "endpoint": "orgs/carabiner-dev",
+      "method": "GET"
+    },
+    "headers": {
+      "Date": "Tue, 04 Mar 2025 15:29:29 GMT",
+      "Etag": "W/\"d60b85f3b7d662e4b2b5ca54a8d9f6d6731f44d438468b5caf62bf1bdcebbab8\"",
+      "Server": "github.com",
+      "X-Accepted-Oauth-Scopes": "admin:org, read:org, repo, user, write:org",
+      "X-Github-Api-Version-Selected": "2022-11-28",
+      "X-Github-Request-Id": "C327:129B75:EB883D:1D960DC:67C71C59"
+    },
+    "values": {
+      "archived_at": null,
+      "created_at": "2025-01-06T16:55:54Z",
+      "default_repository_permission": null,
+      "deploy_keys_enabled_for_repositories": false,
+      "id": 193936921,
+      "is_verified": false,
+      "login": "carabiner-dev",
+      "members_allowed_repository_creation_type": "all",
+      "members_can_create_internal_repositories": false,
+      "members_can_create_private_repositories": true,
+      "members_can_create_public_repositories": true,
+      "members_can_create_repositories": true,
+      "name": "Carabiner Systems",
+      "node_id": "O_kgDOC48-GQ",
+      "two_factor_requirement_enabled": null,
+      "updated_at": "2025-03-01T17:45:38Z",
+      "web_commit_signoff_required": false
+    }
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "github.com/carabiner-dev",
+      "uri": "https://github.com/carabiner-dev",
+      "digest": {
+        "sha256": "2775bba8b2170bef2f91b79d4f179fd87724ffee32b4a20b8304856fd3bf4b8f"
+      }
+    }
+  ]
+}

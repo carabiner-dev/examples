@@ -1,0 +1,84 @@
+{
+  "predicateType": "http://github.com/carabiner-dev/snappy/specs/mfa.yaml",
+  "predicate": {
+    "id": "github.com/uservers#mfa",
+    "name": "github.com/uservers",
+    "url": "https://github.com/uservers",
+    "type": "http://github.com/carabiner-dev/snappy/specs/mfa.yaml",
+    "metadata": {
+      "date": "2025-03-04T10:21:01.760326-05:00",
+      "endpoint": "graphql",
+      "method": "POST"
+    },
+    "headers": {
+      "Date": "Tue, 04 Mar 2025 15:21:01 GMT",
+      "Server": "github.com",
+      "X-Accepted-Oauth-Scopes": "repo",
+      "X-Github-Request-Id": "C2EB:3F0DBF:4ACC1:966E1:67C71A5D"
+    },
+    "values": {
+      "data": {
+        "organization": {
+          "login": "uservers",
+          "membersWithRole": {
+            "edges": [
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "puerco"
+                },
+                "role": "ADMIN"
+              },
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "deobieta"
+                },
+                "role": "MEMBER"
+              },
+              {
+                "hasTwoFactorEnabled": false,
+                "node": {
+                  "login": "ElChesto"
+                },
+                "role": "MEMBER"
+              },
+              {
+                "hasTwoFactorEnabled": false,
+                "node": {
+                  "login": "gort2000"
+                },
+                "role": "MEMBER"
+              },
+              {
+                "hasTwoFactorEnabled": false,
+                "node": {
+                  "login": "paulinayanez"
+                },
+                "role": "MEMBER"
+              },
+              {
+                "hasTwoFactorEnabled": false,
+                "node": {
+                  "login": "quiquegabilan"
+                },
+                "role": "MEMBER"
+              }
+            ],
+            "totalCount": 6
+          }
+        }
+      }
+    }
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "github.com/uservers",
+      "uri": "https://github.com/uservers",
+      "digest": {
+        "sha256": "fe763e70af926142f06586e8164c3ef8add8916bd45f9c61e1282c428352cde5"
+      }
+    }
+  ]
+}

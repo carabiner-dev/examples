@@ -1,0 +1,65 @@
+{
+    "id": "OSPS",
+    "metadata": {
+       "runtime": "cel@v0"
+      },
+    "policies": [
+        {
+            "id": "AC-03",
+            "meta": {
+                "description": "The project's version control system MUST require multi-factor authentication that does not include SMS ",
+                "runtime": "cel@v0",
+                "assert_mode": "AND",
+                "controls": [
+                    { "class": "OSPS", "id": "AC-03" }
+                ]
+            },
+            "identities": [
+                {
+                    "sigstore": {
+                        "mode": "exact",
+                        "issuer": "https://accounts.google.com",
+                        "identity": "puerco@carabiner.dev"
+                   }
+                }
+            ],
+            "tenets": [
+                {
+                    "code": "size(predicates) > 0",
+                    "predicates": {
+                        "types": ["http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml"]
+                    },
+                    "assessment": {
+                        "message": "Found attested branch protection metadata"
+                    }
+                },
+                {
+                    "code": "has(predicates[0].data.values) ? predicates[0].data.values.exists(rule, rule.type == \"deletion\") : false",
+                    "predicates": {
+                        "types": ["http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml"]
+                    },
+                    "assessment": {
+                        "message": "Branch deletion is disabled on default branch"
+                    },
+                    "error": {
+                        "message": "Branch delete protection is not enabled",
+                        "guidance": "Create a branch ruleset protecting your default branch and enable \"Restrict deletions\""
+                    }
+                },
+                {
+                    "code": "has(predicates[0].data.values) ? predicates[0].data.values.exists(rule, rule.type == \"deletion\") : false",
+                    "predicates": {
+                        "types": ["http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml"]
+                    },
+                    "assessment": {
+                        "message": "Force pushing is disabled on default branch"
+                    },
+                    "error": {
+                        "message": "Force pushes can be sent to main branch",
+                        "guidance": "Create a branch ruleset protecting your default branch and enable \"Block force pushes\""
+                    }
+                }
+            ]            
+        }
+    ]
+}

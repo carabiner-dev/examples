@@ -1,0 +1,46 @@
+{
+  "predicateType": "http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml",
+  "predicate": {
+    "id": "github.com/carabiner-dev/demo-repo@main",
+    "name": "github.com/carabiner-dev/demo-repo@main",
+    "url": "git+https://github.com/carabiner-dev/demo-repo/@main",
+    "type": "http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml",
+    "metadata": {
+      "date": "2025-03-04T10:37:46.973783-05:00",
+      "endpoint": "repos/carabiner-dev/demo-repo/rules/branches/main",
+      "method": "GET"
+    },
+    "headers": {
+      "Date": "Tue, 04 Mar 2025 15:37:46 GMT",
+      "Etag": "W/\"46a19b01d03062c467294b0ab688709fde0b1511565a581539542ec4b677947c\"",
+      "Server": "github.com",
+      "X-Accepted-Oauth-Scopes": "",
+      "X-Github-Api-Version-Selected": "2022-11-28",
+      "X-Github-Request-Id": "C35A:AF24A:EA9E4B:1D74325:67C71E4A"
+    },
+    "values": [
+      {
+        "ruleset_id": 3947092,
+        "ruleset_source": "carabiner-dev/demo-repo",
+        "ruleset_source_type": "Repository",
+        "type": "deletion"
+      },
+      {
+        "ruleset_id": 3947092,
+        "ruleset_source": "carabiner-dev/demo-repo",
+        "ruleset_source_type": "Repository",
+        "type": "non_fast_forward"
+      }
+    ]
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "github.com/carabiner-dev/demo-repo@main",
+      "uri": "git+https://github.com/carabiner-dev/demo-repo/@main",
+      "digest": {
+        "sha256": "52e2da8f663cfb629f98dac2708106b139f851386a723faeba4dde373c24e844"
+      }
+    }
+  ]
+}

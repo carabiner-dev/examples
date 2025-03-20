@@ -1,0 +1,53 @@
+{
+  "predicateType": "http://github.com/carabiner-dev/snappy/specs/repo.yaml",
+  "predicate": {
+    "id": "github.com/carabiner-dev/demo-repo",
+    "name": "github.com/carabiner-dev/demo-repo",
+    "url": "git+https://github.com/carabiner-dev/demo-repo",
+    "type": "http://github.com/carabiner-dev/snappy/specs/repo.yaml",
+    "metadata": {
+      "date": "2025-03-04T11:28:21.482926-05:00",
+      "endpoint": "repos/carabiner-dev/demo-repo",
+      "method": "GET"
+    },
+    "headers": {
+      "Date": "Tue, 04 Mar 2025 16:28:21 GMT",
+      "Etag": "W/\"0d0bf0798a52db417220bea92309f7df858737c64fc177730472fa6e8623f7ca\"",
+      "Server": "github.com",
+      "X-Accepted-Oauth-Scopes": "repo",
+      "X-Github-Api-Version-Selected": "2022-11-28",
+      "X-Github-Request-Id": "C460:2A1C70:11E154A:23EF675:67C72A25"
+    },
+    "values": {
+      "fork": false,
+      "full_name": "carabiner-dev/demo-repo",
+      "git_url": "git://github.com/carabiner-dev/demo-repo.git",
+      "has_discussions": false,
+      "has_issues": true,
+      "homepage": null,
+      "html_url": "https://github.com/carabiner-dev/demo-repo",
+      "id": 925026464,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "node_id": "MDc6TGljZW5zZTI=",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "name": "demo-repo",
+      "node_id": "R_kgDONyLIoA",
+      "visibility": "public",
+      "web_commit_signoff_required": false
+    }
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "github.com/carabiner-dev/demo-repo",
+      "uri": "git+https://github.com/carabiner-dev/demo-repo",
+      "digest": {
+        "sha256": "73b9f9806668f6fccf8f49cb0c778bb4fb054f49003ba726fd59913e429154da"
+      }
+    }
+  ]
+}

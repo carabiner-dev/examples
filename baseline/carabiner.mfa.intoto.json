@@ -1,0 +1,49 @@
+{
+  "predicateType": "http://github.com/carabiner-dev/snappy/specs/mfa.yaml",
+  "predicate": {
+    "id": "github.com/carabiner-dev#mfa",
+    "name": "github.com/carabiner-dev",
+    "url": "https://github.com/carabiner-dev",
+    "type": "http://github.com/carabiner-dev/snappy/specs/mfa.yaml",
+    "metadata": {
+      "date": "2025-03-04T11:54:52.943941-05:00",
+      "endpoint": "graphql",
+      "method": "POST"
+    },
+    "headers": {
+      "Date": "Tue, 04 Mar 2025 16:54:52 GMT",
+      "Server": "github.com",
+      "X-Accepted-Oauth-Scopes": "repo",
+      "X-Github-Request-Id": "C4C5:2D2E5:13D5190:27D5BF2:67C7305C"
+    },
+    "values": {
+      "data": {
+        "organization": {
+          "login": "carabiner-dev",
+          "membersWithRole": {
+            "edges": [
+              {
+                "hasTwoFactorEnabled": true,
+                "node": {
+                  "login": "puerco"
+                },
+                "role": "ADMIN"
+              }
+            ],
+            "totalCount": 1
+          }
+        }
+      }
+    }
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "github.com/carabiner-dev",
+      "uri": "https://github.com/carabiner-dev",
+      "digest": {
+        "sha256": "ca10a2c73eeef0dd32d43fcdf3b0eb9834b9c2c5cf420fb6513f7d6746a71eca"
+      }
+    }
+  ]
+}

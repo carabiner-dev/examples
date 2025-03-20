@@ -1,0 +1,42 @@
+{
+  "predicateType": "http://github.com/carabiner-dev/snappy/specs/org.yaml",
+  "predicate": {
+    "id": "github.com/openvex",
+    "name": "github.com/openvex",
+    "url": "https://github.com/openvex",
+    "type": "http://github.com/carabiner-dev/snappy/specs/org.yaml",
+    "metadata": {
+      "date": "2025-03-02T11:08:22.230552-06:00",
+      "endpoint": "orgs/openvex",
+      "method": "GET"
+    },
+    "headers": {
+      "Date": "Sun, 02 Mar 2025 17:08:22 GMT",
+      "Etag": "W/\"e0a00dcd996e2ee3e785a9cc5a7084cac002cdc2116eda2d0c44ea836c902eb1\"",
+      "Server": "github.com",
+      "X-Accepted-Oauth-Scopes": "admin:org, read:org, repo, user, write:org",
+      "X-Github-Api-Version-Selected": "2022-11-28",
+      "X-Github-Request-Id": "C3A9:3E53E5:533F6A:A82EBC:67C49086"
+    },
+    "values": {
+      "archived_at": null,
+      "created_at": "2022-12-24T21:06:29Z",
+      "id": 121361164,
+      "is_verified": true,
+      "login": "openvex",
+      "name": "OpenVEX",
+      "node_id": "O_kgDOBzvTDA",
+      "updated_at": "2023-12-22T15:52:25Z"
+    }
+  },
+  "type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "github.com/openvex",
+      "uri": "https://github.com/openvex",
+      "digest": {
+        "sha256": "8f059c29e4f322ac52c2728f199da597bf4dcb0e891bcd520c75d269936beb84"
+      }
+    }
+  ]
+}
