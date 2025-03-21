@@ -9,7 +9,8 @@ fi
 
 go run ./cmd/ampel verify "${EXAMPLES_PATH}/hello-linux-amd64" \
     --policy "${EXAMPLES_PATH}/osps.branch.policy.json" \
-    --attestation "${EXAMPLES_PATH}/carabiner-demo-repo.branches.intoto.json"
+    --attestation "${EXAMPLES_PATH}/carabiner-demo-repo.branches.intoto.json" \
+    --attestation "${EXAMPLES_PATH}/carabiner-demo-repo.slsa.bundle.json"
 
 echo "🔎 Verifying Repositoryh"
 
