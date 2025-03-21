@@ -11,6 +11,14 @@
                     { "class": "OSPS", "id": "GV-02" }
                 ]
             },
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "github.repoDescriptorFromURI(predicate.data.materials[0].uri)"
+                    }
+                }
+            ],
             "identities": [
                 {
                     "sigstore": {

@@ -16,7 +16,8 @@ echo "🔎 Verifying Repositoryh"
 
 go run ./cmd/ampel verify "${EXAMPLES_PATH}/hello-linux-amd64" \
     --policy "${EXAMPLES_PATH}/osps.repo.policy.json" \
-    --attestation "${EXAMPLES_PATH}/carabiner-demo-repo.repo.intoto.json"
+    --attestation "${EXAMPLES_PATH}/carabiner-demo-repo.repo.intoto.json" \
+    --attestation "${EXAMPLES_PATH}/carabiner-demo-repo.slsa.bundle.json"
 
 echo "🔎 Verifying Organization"
 
