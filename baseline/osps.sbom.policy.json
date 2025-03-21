@@ -24,9 +24,11 @@
                 }
             ],
             "chain": [
-                "predicate": {
-                    "type": "https://slsa.dev/provenance/v0.2",
-                    "selector": "predicate.data.materials[0]"
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
                 }
             ],
             "tenets": [
@@ -68,12 +70,14 @@
                     { "class": "OSPS", "id": "DO-01" }
                 ]
             },
-            "chain": {
-                "predicate": {
-                    "type": "https://slsa.dev/provenance/v0.2",
-                    "selector": "predicate.data.materials[0]"
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
                 }
-            },
+            ],
             "identities": [
                 {
                     "sigstore": {
@@ -128,12 +132,14 @@
                     { "class": "OSPS", "id": "DO-02" }
                 ]
             },
-            "chain": {
-                "predicate": {
-                    "type": "https://slsa.dev/provenance/v0.2",
-                    "selector": "predicate.data.materials[0]"
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
                 }
-            },
+            ],
             "identities": [
                 {
                     "sigstore": {
