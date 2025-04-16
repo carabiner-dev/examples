@@ -1,0 +1,88 @@
+{
+    "id": "NIST-MIN-ELEMENTS",
+    "meta": {
+        "description": "Ensure a Software Bill of Materials must fulfill the The Minimum Elements For a Software Bill of Materials as defined by NIST"
+    },
+    "policies": [
+        {
+            "meta": {
+                "description": "Author of the SBOM data"
+            },
+            "predicates": {
+                "types": ["https://spdx.dev/Document", "https://cyclonedx.org/bom"]
+            },
+            "tenets": [
+                {
+                    "outputs": {
+                        "authors": { "code": "size(sboms) > 0 ? sboms[0].get_authors() : []" } 
+                    },
+                    "code": "size(outputs.authors) > 0"
+                }
+            ]            
+        },
+        {
+            "meta": {
+                "description": "Timestamp of the SBOM"
+            },
+            "predicates": {
+                "types": ["https://spdx.dev/Document", "https://cyclonedx.org/bom"]
+            },
+            "tenets": [
+                {
+                    "outputs": {
+                        "date": { "code": "size(sboms) > 0 ? sboms[0].metadata.date : null" } 
+                    },
+                    "code": "int(outputs.date) > 0"
+                }
+            ]            
+        },
+        {
+            "meta": {
+                "description": "Supplier"
+            },
+            "predicates": {
+                "types": ["https://spdx.dev/Document", "https://cyclonedx.org/bom"]
+            },
+            "tenets": [
+                {
+                    "outputs": {
+                        "suppliers": { "code": "sboms[0].get_node_list().get_root_nodes().map(n, n.suppliers)" } 
+                    },
+                    "code": "outputs.suppliers.all(s, size(s) > 0)"
+                }
+            ]            
+        },
+        {
+            "meta": {
+                "description": "Version of the component"
+            },
+            "predicates": {
+                "types": ["https://spdx.dev/Document", "https://cyclonedx.org/bom"]
+            },
+            "tenets": [
+                {
+                    "outputs": {
+                        "versions": { "code": "sboms[0].get_node_list().get_root_nodes()" } 
+                    },
+                    "code": "outputs.versions.all(s, s != \"\")"
+                }
+            ]            
+        },
+        {
+            "meta": {
+                "description": "Software identifiers"
+            },
+            "predicates": {
+                "types": ["https://spdx.dev/Document", "https://cyclonedx.org/bom"]
+            },
+            "tenets": [
+                {
+                    "outputs": {
+                        "identifiers": { "code": "sboms[0].get_node_list().get_root_nodes().nodes.map(n, n.identifiers)" } 
+                    },
+                    "code": "outputs.identifiers.all(s, size(s) > 0)"
+                }
+            ]            
+        }
+    ]
+}
