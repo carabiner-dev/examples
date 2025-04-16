@@ -1,6 +1,6 @@
 {
     "id": "OSPS",
-    "metadata": {
+    "meta": {
         "runtime": "cel@v0"
     },
     "policies": [
