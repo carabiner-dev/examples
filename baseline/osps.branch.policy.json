@@ -42,19 +42,7 @@
                     }
                 },
                 {
-                    "code": "has(predicates[0].data.values) ? predicates[0].data.values.exists(rule, rule.type == \"deletion\") : false",
-                    "predicates": {
-                        "types": ["http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml"]
-                    },
-                    "assessment": {
-                        "message": "Branch deletion is disabled on default branch"
-                    },
-                    "error": {
-                        "message": "Branch delete protection is not enabled",
-                        "guidance": "Create a branch ruleset protecting your default branch and enable \"Restrict deletions\""
-                    }
-                },
-                {
+                    "id": "01",
                     "code": "has(predicates[0].data.values) ? predicates[0].data.values.exists(rule, rule.type == \"deletion\") : false",
                     "predicates": {
                         "types": ["http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml"]
@@ -66,7 +54,21 @@
                         "message": "Force pushes can be sent to main branch",
                         "guidance": "Create a branch ruleset protecting your default branch and enable \"Block force pushes\""
                     }
-                }
+                },
+                {
+                    "id": "02",
+                    "code": "has(predicates[0].data.values) ? predicates[0].data.values.exists(rule, rule.type == \"deletion\") : false",
+                    "predicates": {
+                        "types": ["http://github.com/carabiner-dev/snappy/specs/branch-rules.yaml"]
+                    },
+                    "assessment": {
+                        "message": "Branch deletion is disabled on default branch"
+                    },
+                    "error": {
+                        "message": "Branch delete protection is not enabled",
+                        "guidance": "Create a branch ruleset protecting your default branch and enable \"Restrict deletions\""
+                    }
+                }                
             ]            
         }
     ]

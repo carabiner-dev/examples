@@ -32,15 +32,6 @@
             ],
             "tenets": [
                 {
-                    "code": "size(predicates) > 0",
-                    "predicates": {
-                        "types": ["http://github.com/carabiner-dev/snappy/specs/mfa.yaml"]
-                    },
-                    "assessment": {
-                        "message": "Found attested data about MFA configuration"
-                    }
-                },
-                {
                     "code": "outputs[\"members\"].all(member, member.hasTwoFactorEnabled)",
                     "predicates": {
                         "types": ["http://github.com/carabiner-dev/snappy/specs/mfa.yaml"]
