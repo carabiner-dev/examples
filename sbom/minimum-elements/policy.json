@@ -1,7 +1,7 @@
 {
     "id": "NIST-SBOM-ME",
     "meta": {
-        "description": "Ensure a Software Bill of Materials must fulfill the The Minimum Elements For a Software Bill of Materials as defined by NIST"
+        "description": "Ensure a Software Bill of Materials meets the The Minimum Elements For a Software Bill of Materials as defined by NIST"
     },
     "policies": [
         {
