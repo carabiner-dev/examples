@@ -1,0 +1,44 @@
+{
+    "id": "NIST-SBOM-ME",
+    "meta": {
+        "description": "Ensure a Software Bill of Materials meets the The Minimum Elements For a Software Bill of Materials as defined by NIST"
+    },
+    "references": [
+        {
+            "location": {
+                "uri": "git+https://github.com/puerco/lab#ampel/minimum-elements.policy.json",
+                "digest": {
+                    "sha256": "ba069d6f37afff1aafa0b483949f7d05a4137cba50406875055d222fa138e99c"
+                } 
+            }
+        }
+    ],
+    "policies": [
+        { "source": { "id": "NIST-ME-AUTHOR" } },
+        { "source": { "id": "NIST-ME-TIMESTAMP" } },
+        { "source": { "id": "NIST-ME-VERSION" } },
+        { "source": { "id": "NIST-ME-SUPPLIER" } },
+        { "source": { "id": "NIST-ME-IDENTIFIERS" } },
+        {
+            "source": { "id": "NIST-ME-NAME" },
+            "identities": [
+                {
+                    "sigstore": {
+                        "issuer": "https://accounts.google.com",
+                        "identity": "puerco@carabiner.dev"
+                    }
+                }
+            ]
+        },
+        { "source": {
+            "id": "NIST-ME-RELATONSHIPS",
+            "location": {
+                "uri": "git+https://github.com/carabiner-dev/examples#sbom/minimum-elements/policy.json",
+                "digest": {
+                    "sha256": "ba069d6f37afff1aafa0b483949f7d05a4137cba50406875055d222fa138e99c"
+                } 
+            }
+         }
+        }
+    ]
+}
