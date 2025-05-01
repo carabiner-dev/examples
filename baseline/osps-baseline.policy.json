@@ -609,6 +609,92 @@
             ]
         },
         {
+            "id": "OSPS-SA-01",
+            "meta": {
+                "enforce": "OFF",
+                "description": "design documentation demonstrating all actions and actors within the system",
+                "controls": [ { "class": "OSPS", "id": "SA-01" } ]
+            },
+            "tenets": [
+                {
+                    "id": "01",
+                    "predicates": { "types": ["https://slsa.dev/provenance/v0.2"] },
+                    "code": "false",
+                    "error": {
+                        "message": "Not implemented yet",
+                        "guidance": "We don't have a way to detect documentation about actors and actions in the system"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "OSPS-SA-02",
+            "meta": {
+                "enforce": "OFF",
+                "description": "descriptions of all external software interfaces",
+                "controls": [ { "class": "OSPS", "id": "SA-02" } ]
+            },
+            "tenets": [
+                {
+                    "id": "01",
+                    "predicates": { "types": ["https://slsa.dev/provenance/v0.2"] },
+                    "code": "false",
+                    "error": {
+                        "message": "Not implemented yet",
+                        "guidance": "We don't have a way to detect documentation about the external interfaces"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "OSPS-SA-03",
+            "meta": {
+                "enforce": "OFF",
+                "description": "VCS MUST require at least one non-author approval of changes to the primary branch.",
+                "controls": [ { "class": "OSPS", "id": "SA-03" } ]
+            },
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
+                }
+            ],
+            "tenets": [
+                {
+                    "id": "01-si",
+                    "predicates": {
+                        "types": ["https://github.com/ossf/security-insights-spec"]
+                    },
+                    "code": "size(outputs.assessments) > 0",
+                    "outputs": {
+                        "assessments": {
+                            "code": "has(predicates[0].data.security) ? (has(predicates[0].data.security.assessments) ? predicates[0].data.security.assessments : {} ) : {} "
+                        }
+                    },
+                    "assessment": {
+                        "message": "Found at least one securioty assessment listed in security insights."
+                    },
+                    "error": {
+                        "message": "No assessments found in security insights",
+                        "guidance": "Perform a security assessment on your project and record it in SECURITY_INSIGHTS.yml"
+                    }
+                },
+                {
+                    "id": "02",
+                    "predicates": {
+                        "types": ["https://github.com/ossf/security-insights-spec"]
+                    },
+                    "code": "false",
+                    "error": {
+                        "message": "Not implemented yet",
+                        "guidance": "We don't have a way to detect threat models yet"
+                    }
+                }
+            ]
+        },
+        {
             "id": "OSPS-BR-02",
             "meta": {
                 "description": "Releases and released software assets MUST be assigned a unique version identifier",
@@ -686,7 +772,7 @@
                     "code": "outputs.changelog != '' ",
                     "outputs": {
                         "changelog": {
-                            "code": "has(predicates[0].repository) ? (has(predicates[0].repository.release) ? (has(predicates[0].repository.release.changelog) ? predicates[0].repository.release.changelog : '') : '') : '' "
+                            "code": "has(predicates[0].data.repository) ? (has(predicates[0].data.repository.release) ? (has(predicates[0].data.repository.release.changelog) ? predicates[0].data.repository.release.changelog : '') : '') : '' "
                         }
                     },
                     "assessment": {
@@ -934,11 +1020,11 @@
                         "types": ["https://github.com/ossf/security-insights-spec"]
                     },
                     "assessment": {
-                        "message": "Project accepts vulnerability reports according to SECURITY_INSIGHTS.yml"
+                        "message": "Signature verification instructions found in SECURITY_INSIGHTS.yml"
                     },
                     "error": {
-                        "message": "No vulnerability reports found in SI",
-                        "guidance": "Add a security insights file to your repository and define reports-accepted as true under vulnerability-reporting"
+                        "message": "No verification instructions found in SI",
+                        "guidance": "Point to instructions to verify your signatures in SECURITY_INSIGHTS.aml"
                     }
                 }
             ]
