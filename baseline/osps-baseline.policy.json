@@ -43,11 +43,10 @@
         {
             "id": "OSPS-AC-03",
             "meta": {
-                "description": "The project's version control system MUST require multi-factor authentication that does not include SMS ",
+                "description": "VCS MUST prevent unintentional modification of the primary branch.",
                 "assert_mode": "AND",
-                "controls": [
-                    { "class": "OSPS", "id": "AC-03" }
-                ]
+                "controls": [ { "class": "OSPS", "id": "AC-03" } ],
+                "enforce": "OFF"
             },
             "chain": [
                 {
@@ -530,6 +529,41 @@
                     "error": {
                         "message": "Some of the attested test runs failed",
                         "guidance": "Ensure the project's tests are passing before releasing"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "OSPS-QA-07",
+            "meta": {
+                "enforce": "OFF",
+                "description": "VCS MUST require at least one non-author approval of changes to the primary branch.",
+                "controls": [ { "class": "OSPS", "id": "QA-07" } ]
+            },
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
+                }
+            ],
+            "tenets": [
+                {
+                    "id": "01-scorecard",
+                    "code": "outputs.bin_artifacts_checks.all(c, c.score == 10)",
+                    "outputs": {
+                        "bin_artifacts_checks": { "code": "has(predicates[0].data.checks) ? predicates[0].data.checks.filter(c, c.name == 'Code-Review' && has(c.score)) : [] " }
+                    },
+                    "predicates": {
+                        "types": ["https://scorecard.dev/result/v0.1"]
+                    },
+                    "assessment": {
+                        "message": "Scorecard reports code review is required for changes"
+                    },
+                    "error": {
+                        "message": "Scorecard detected code review is not enabled in the repository",
+                        "guidance": "Ensure your repo requires a review from another party for every pull request"
                     }
                 }
             ]
