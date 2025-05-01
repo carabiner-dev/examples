@@ -194,6 +194,63 @@
             ]            
         },
         {
+            "id": "OSPS-LE-03",
+            "meta": {
+                "description": "When an official release is created, that release MUST contain a descriptive log of functional and security modifications.",
+                "enforce": "OFF",
+                "controls": [ { "class": "OSPS", "id": "LE-03" } ],
+                "assert_mode": "OR"
+            },
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
+                }
+            ],
+            "tenets": [
+                {
+                    "id": "01-sbom",
+                    "code": "size(outputs[\"files\"]) > 0",
+                    "predicates": {
+                        "types": ["https://spdx.dev/Document", "https://cyclonedx.org/bom"]
+                    },
+                    "outputs": {
+                        "files": {
+                            "code": "sboms[0].get_node_list().get_nodes().filter(n, (n.name == 'LICENSE' || n.name == 'LICENSE.txt' ))"
+                        }
+                    },
+                    "assessment": {
+                        "message": "Found a license file in the project's SBOM."
+                    },
+                    "error": {
+                        "message": "Could not detect a license file in the SBOM.",
+                        "guidance": "Add a file named LICENSE to your project's codebase."
+                    }
+                },
+                {
+                    "id": "01-si",
+                    "predicates": {
+                        "types": ["https://github.com/ossf/security-insights-spec"]
+                    },
+                    "code": "outputs.license != '' ",
+                    "outputs": {
+                        "license": {
+                            "code": "has(predicates[0].repository) ? (has(predicates[0].repository.license) ? (has(predicates[0].repository.license.expression) ? predicates[0].repository.license.expression : '' ) : '' ) : '' "
+                        }
+                    },
+                    "assessment": {
+                        "message": "Found a license entry in the project's security insights file."
+                    },
+                    "error": {
+                        "message": "Could not detect a license entry in the security insights file.",
+                        "guidance": "Add a license entry to your SI file under repository.release.license"
+                    }
+                }
+            ]            
+        },
+        {
             "id": "OSPS-QA-01",
             "meta": {
                 "description": "The project's source code and change history MUST be publicly readable at a static URL",
