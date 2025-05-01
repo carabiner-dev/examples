@@ -784,15 +784,23 @@
                 "enforce": "OFF",
                 "controls": [ { "class": "OSPS", "id": "DO-04" } ]
             },
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
+                }
+            ],
             "tenets": [
                 {
                     "id": "01-openeox",
                     "predicates": {
-                        "types": ["https://openeox.org/schema-0.2.0.json"]
+                        "types": ["https://docs.oasis-open.org/openeox/core/v1.0"]
                     },
                     "code": "size(predicates) > 0",
                     "assessment": {
-                        "message": "Found an OpenEOX statement with the artifact's EOS."
+                        "message": "Found an OpenEoX statement with the artifact's EOS."
                     },
                     "error": {
                         "message": "No OpenEOX data found.",
@@ -808,11 +816,19 @@
                 "enforce": "OFF",
                 "controls": [ { "class": "OSPS", "id": "DO-05" } ]
             },
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
+                }
+            ],
             "tenets": [
                 {
                     "id": "01-openeox",
                     "predicates": {
-                        "types": ["https://openeox.org/schema-0.2.0.json"]
+                        "types": ["https://docs.oasis-open.org/openeox/core/v1.0"]
                     },
                     "code": "size(predicates) > 0",
                     "assessment": {
