@@ -279,6 +279,25 @@
             ]            
         },
         {
+            "id": "OSPS-GV-04",
+            "meta": {
+                "enforce": "OFF",
+                "description": "Policy that code contributors are reviewed prior to granting escalated permissions",
+                "controls": [ { "class": "OSPS", "id": "GV-04" } ]
+            },
+            "tenets": [
+                {
+                    "id": "01",
+                    "predicates": { "types": ["https://slsa.dev/provenance/v0.2"] },
+                    "code": "false",
+                    "error": {
+                        "message": "Not implemented yet",
+                        "guidance": "We don't have a way to detect if contributors are reviewed"
+                    }
+                }
+            ]
+        },
+        {
             "id": "OSPS-LE-03",
             "meta": {
                 "description": "When an official release is created, that release MUST contain a descriptive log of functional and security modifications.",
