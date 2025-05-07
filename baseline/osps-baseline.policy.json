@@ -786,7 +786,7 @@
             "id": "OSPS-SA-03",
             "meta": {
                 "enforce": "OFF",
-                "description": "VCS MUST require at least one non-author approval of changes to the primary branch.",
+                "description": "The project MUST assess the security posture of all software assets",
                 "controls": [ { "class": "OSPS", "id": "SA-03" } ]
             },
             "chain": [
@@ -815,17 +815,6 @@
                     "error": {
                         "message": "No assessments found in security insights",
                         "guidance": "Perform a security assessment on your project and record it in SECURITY_INSIGHTS.yml"
-                    }
-                },
-                {
-                    "id": "02",
-                    "predicates": {
-                        "types": ["https://github.com/ossf/security-insights-spec"]
-                    },
-                    "code": "false",
-                    "error": {
-                        "message": "Not implemented yet",
-                        "guidance": "We don't have a way to detect threat models yet"
                     }
                 }
             ]
@@ -1465,6 +1454,41 @@
                     }
                 }
             ]            
+        },
+        {
+            "id": "OSPS-VM-06",
+            "meta": {
+                "enforce": "OFF",
+                "description": "Enforce a policy that defines a threshold for remediation of SAST findings.",
+                "controls": [ { "class": "OSPS", "id": "VM-06" } ]
+            },
+            "chain": [
+                {
+                    "predicate": {
+                        "type": "https://slsa.dev/provenance/v0.2",
+                        "selector": "predicate.data.materials[0]"
+                    }
+                }
+            ],
+            "tenets": [
+                {
+                    "id": "01-scorecard",
+                    "code": "outputs.bin_artifacts_checks.all(c, c.score == 10)",
+                    "outputs": {
+                        "bin_artifacts_checks": { "code": "has(predicates[0].data.checks) ? predicates[0].data.checks.filter(c, c.name == 'SAST' && has(c.score)) : [] " }
+                    },
+                    "predicates": {
+                        "types": ["https://scorecard.dev/result/v0.1"]
+                    },
+                    "assessment": {
+                        "message": "Scorecard detected a SAST tool"
+                    },
+                    "error": {
+                        "message": "Scorecard did not detect a SAST tool",
+                        "guidance": "Configure a SAST tool like CodeQL in your repo and reattest the scorecard"
+                    }
+                }
+            ]
         }
     ]
 }
