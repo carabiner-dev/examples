@@ -14,19 +14,7 @@
         "created": "2025-03-04T17:08:26Z"
     },
     "packages": [
-        {
-            "name": "fake-top-level",
-            "SPDXID": "SPDXRef-fake",
-            "supplier": "Org: Carabiner",
-            "versionInfo": "v0.0.1-pre15.1+415b7355",
-            "externalRefs": [
-                {
-                    "referenceCategory": "PACKAGE-MANAGER",
-                    "referenceType": "purl",
-                    "referenceLocator": "pkg:generic/demo-repo@v0.0.1-pre15.1+415b7355"
-                }
-            ]
-        },
+       
         {
             "name": "github.com/carabiner-dev/demo-repo",
             "SPDXID": "SPDXRef-51a215c8-8048-4066-b0af-7e3383dafd80",
