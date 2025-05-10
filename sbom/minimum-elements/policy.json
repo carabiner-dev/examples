@@ -18,7 +18,11 @@
                         "authors": { "code": "size(sboms) > 0 ? sboms[0].get_authors() : []" } 
                     },
                     "code": "size(outputs.authors) > 0",
-                    "assessment": {  "message": "SBOM author defined" }
+                    "assessment": { "message": "SBOM author defined" },
+                    "error": {
+                        "message": "SBOM document has no authors defined",
+                        "guidance": "Ensure the document has author information set in its metadata"
+                    }
                 }
             ]            
         },
@@ -33,10 +37,10 @@
             "tenets": [
                 {
                     "outputs": {
-                        "date": { "code": "size(sboms) > 0 ? sboms[0].metadata.date : null" } 
+                        "date": { "code": "size(sboms) > 0 ? sboms[0].get_metadata().date : null" } 
                     },
                     "code": "int(outputs.date) > 0",
-                    "assessment": {  "message": "SBOM contains a timestamp" }
+                    "assessment": { "message": "SBOM contains a timestamp" }
                 }
             ]            
         },
