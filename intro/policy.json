@@ -1,7 +1,7 @@
 {
     "policies": [
         {
-            "id": "EOX-UNDER-SUPPORT",
+            "id": "EOX-SUPPORT",
             "meta": {
                 "description": "Timestamp of the SBOM"
             },
@@ -10,6 +10,7 @@
             },
             "tenets": [
                 {
+                    "id": "EOX-SUPPORT-EOL",
                     "outputs": {
                         "end_of_life": { "code": "timestamp(predicates[0].data.end_of_life).getFullYear()" }
                     },
