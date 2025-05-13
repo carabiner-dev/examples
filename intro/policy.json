@@ -1,20 +1,21 @@
 {
     "policies": [
         {
-            "id": "EOX-SUPPORT",
+            "id": "OPENEOX",
             "meta": {
-                "description": "Timestamp of the SBOM"
+                "description": "Project end-of-life / end-of-support"
             },
             "predicates": {
                 "types": ["https://docs.oasis-open.org/openeox/core/v1.0"]
             },
             "tenets": [
                 {
-                    "id": "EOX-SUPPORT-EOL",
+                    "id": "END-OF-X",
                     "outputs": {
-                        "end_of_life": { "code": "timestamp(predicates[0].data.end_of_life).getFullYear()" }
+                        "end_of_life": { "code": "timestamp(predicates[0].data.end_of_life).getFullYear()" },
+                        "end_of_security_support": { "code": "timestamp(predicates[0].data.end_of_security_support).getFullYear()" }
                     },
-                    "code": "outputs.end_of_life > 2025",
+                    "code": "outputs.end_of_life > 2025 && outputs.end_of_security_support > 2025",
 
                     "assessment": { "message": "hello-world will be supported long enough." },
                     "error": { "message": "hello-world will be out of support way too soon!" }
