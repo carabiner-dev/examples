@@ -1,0 +1,16 @@
+ {
+    "context": {
+        "myvalue": {
+            "required": true,
+            "default": "MUST_PASS"
+        }
+    },
+    "tenets": [
+        {
+            "code": "context.myvalue == 'MUST_PASS' ",
+            "predicates": {
+                "types": ["https://spdx.dev/Document"]
+            }
+        }
+    ]
+}

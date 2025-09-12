@@ -1,0 +1,21 @@
+ {
+    "common": {
+        "context": {
+            "myvalue": {
+                "required": true
+            }
+        }
+    },
+    "policies": [
+        {
+            "tenets": [
+                {
+                    "code": "context.myvalue == 'MUST_PASS' ",
+                    "predicates": {
+                        "types": ["https://spdx.dev/Document"]
+                    }
+                }
+            ]
+        }
+    ]
+}
