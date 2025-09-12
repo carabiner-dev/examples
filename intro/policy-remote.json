@@ -1,0 +1,12 @@
+{
+    "policies": [
+        {
+            "source": {
+                "location": {
+                    "uri": "git+https://github.com/carabiner-dev/examples@829834612944123ba0f2fba07053b44de991ef64#intro/policy.json"
+                },
+                "id": "OPENEOX"
+            }
+        }
+    ]
+}
