@@ -18,7 +18,7 @@
                         "authors": { "code": "size(sboms) > 0 ? sboms[0].get_authors() : []" } 
                     },
                     "code": "size(outputs.authors) > 0",
-                    "assessment": { "message": "SBOM author defined" },
+                    "assessment": { "message": "SBOM authored by {{.Outputs.authors}}" },
                     "error": {
                         "message": "SBOM document has no authors defined",
                         "guidance": "Ensure the document has author information set in its metadata"
