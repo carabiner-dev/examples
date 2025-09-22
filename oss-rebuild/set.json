@@ -1,0 +1,46 @@
+{
+	"common": {
+        "context": {
+            "packages": {
+                "required": true,
+                "default": ["postcss-selector-parser2"]
+            }
+        }
+    },
+    "chain": [
+		{
+            "predicate": {
+                "type": "https://spdx.dev/Document",
+                "selector": "predicates[0].data.packages.filter(pkg, pkg.name in context.packages && has(pkg.checksums) && size(pkg.checksums) > 0).map(pkg, { 'name': has(pkg.name) ? pkg.name : '', 'digest': pkg.checksums.map(checksum, { string(checksum.algorithm).lowerAscii(): dyn(checksum.checksumValue) })[0], 'uri': has(pkg.externalRefs) && size(pkg.externalRefs) > 0 ? dyn(pkg.externalRefs.filter(ref, ref.referenceType == 'purl')[0].referenceLocator) : dyn('')   })"
+            }
+        }
+	],
+    "policies": [
+        {
+            "id": "oss-rebuild-artifact-equivalence",
+            "meta": {
+                "description": "Validate OSS Rebuild ArtifactEquivalence attestation"
+            },
+            "predicates": {
+                "types": ["https://slsa.dev/provenance/v1"]
+            },
+            "identities": [
+                {
+                    "key": {
+                        "id": "5be34774cae03891",
+                        "data": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXkyL5IFxz/Hg6DwUy0HBumXcMxt9\nnQSECAK6r262hPwIzjd6LpE7IPlUbwgheE87vU8EUE9tsS02MShFZGo1gg==\n-----END PUBLIC KEY-----\n"
+                    }
+                }
+            ],
+            "tenets": [
+                {
+                    "outputs": {
+                        "buildDefinition": { "code": "predicates[0].data.buildDefinition.buildType" } 
+                    },
+                    "code": "outputs.buildDefinition == 'https://docs.oss-rebuild.dev/builds/ArtifactEquivalence@v0.1' ",
+                    "assessment": {  "message": "Build type is ArtifactEquivalence" }
+                }
+            ]
+        }
+    ]
+ }
