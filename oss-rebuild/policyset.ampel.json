@@ -5,16 +5,7 @@
             "packages": {
                 "required": true
             }
-        },
-        "identities": [
-                {
-                    "key": {
-                        "id": "5be34774cae03891",
-                        "data": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXkyL5IFxz/Hg6DwUy0HBumXcMxt9\nnQSECAK6r262hPwIzjd6LpE7IPlUbwgheE87vU8EUE9tsS02MShFZGo1gg==\n-----END PUBLIC KEY-----\n"
-                    }
-                }
-            ]
-            
+        }
     },
     "chain": [
 		{
@@ -33,6 +24,14 @@
             "predicates": {
                 "types": ["https://slsa.dev/provenance/v1"]
             },
+            "identities": [
+                {
+                    "key": {
+                        "id": "5be34774cae03891",
+                        "data": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXkyL5IFxz/Hg6DwUy0HBumXcMxt9\nnQSECAK6r262hPwIzjd6LpE7IPlUbwgheE87vU8EUE9tsS02MShFZGo1gg==\n-----END PUBLIC KEY-----\n"
+                    }
+                }
+            ],
             "tenets": [
                 {
                     "outputs": {

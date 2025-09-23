@@ -1,0 +1,26 @@
+{
+            "id": "oss-rebuild-artifact-equivalence",
+            "meta": {
+                "description": "Validate package with an OSS Rebuild ArtifactEquivalence attestation"
+            },
+            "predicates": {
+                "types": ["https://slsa.dev/provenance/v1"]
+            },
+            "identities": [
+                {
+                    "key": {
+                        "id": "5be34774cae03891",
+                        "data": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXkyL5IFxz/Hg6DwUy0HBumXcMxt9\nnQSECAK6r262hPwIzjd6LpE7IPlUbwgheE87vU8EUE9tsS02MShFZGo1gg==\n-----END PUBLIC KEY-----\n"
+                    }
+                }
+            ],
+            "tenets": [
+                {
+                    "outputs": {
+                        "buildDefinition": { "code": "predicates[0].data.buildDefinition.buildType" } 
+                    },
+                    "code": "outputs.buildDefinition == 'https://docs.oss-rebuild.dev/builds/ArtifactEquivalence@v0.1' ",
+                    "assessment": {  "message": "Package {{ .Subject.Name }} build verified through ArtifactEquivalence" }
+                }
+            ]
+        }
