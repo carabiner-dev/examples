@@ -1,6 +1,6 @@
 {
     "id": "oss-rebuild-sbom",
-	"common": {
+    "common": {
         "context": {
             "packages": {
                 "required": true
@@ -19,10 +19,14 @@
         {
             "id": "oss-rebuild-artifact-equivalence",
             "meta": {
+                "assert_mode": "OR",
                 "description": "Validate package with an OSS Rebuild ArtifactEquivalence attestation"
             },
-            "predicates": {
-                "types": ["https://slsa.dev/provenance/v1"]
+            "context": {
+                "whitelist": {
+                    "required": true,
+                    "default": []
+                }
             },
             "identities": [
                 {
@@ -34,11 +38,18 @@
             ],
             "tenets": [
                 {
+                    "predicates": {
+                        "types": ["https://slsa.dev/provenance/v1"]
+                    },
                     "outputs": {
                         "buildDefinition": { "code": "predicates[0].data.buildDefinition.buildType" } 
                     },
                     "code": "outputs.buildDefinition == 'https://docs.oss-rebuild.dev/builds/ArtifactEquivalence@v0.1' ",
                     "assessment": {  "message": "Package {{ .Subject.Name }} build verified through ArtifactEquivalence" }
+                },
+                {
+                   "code": " subject.name in context.whitelist ",
+                    "assessment": {  "message": "Package {{ .Subject.Name }} whitelisted" }
                 }
             ]
         }
