@@ -1,21 +1,26 @@
 {
     // HJSON format allows comments and relaxed syntax for easier policy authoring
-    // This example demonstrates AMPEL policy structure using HJSON features
+    // This example demonstrates AMPEL PolicySet structure using HJSON features
 
-    runtime: cedar@v1.0.0
     id: OSPS
-    version: "1"
+
+    // Meta contains PolicySet-level metadata
+    meta: {
+        runtime: "cedar@v1.0.0"
+        version: 1
+        description: "Example AMPEL PolicySet demonstrating HJSON format"
+    }
 
     policies: [
         {
             id: AC-07
-            version: v0.0.1
 
             meta: {
                 // Policy description explaining its purpose
                 description: "The project's version control system MUST require multi-factor authentication that does not include SMS"
-                runtime: cel@v0
+                runtime: "cel@v0"
                 assert_mode: OR
+                version: 1
 
                 // Controls can be linked to compliance frameworks
                 controls: [
@@ -29,58 +34,52 @@
             // Define trusted signer identities
             identities: [
                 {
-                    type: exact
-                    issuer: https://accounts.google.com/
-                    identity: puerco@gmail.com
+                    sigstore: {
+                        mode: "exact"
+                        issuer: "https://accounts.google.com/"
+                        identity: "puerco@gmail.com"
+                    }
                 }
             ]
 
             // Context values allow policies to be reusable across environments
             context: {
-                values: {
-                    // String context value with default
-                    author: {
-                        type: string
-                        required: true
-                        default: Puerco
-                    }
-
-                    // Integer context value
-                    count: {
-                        type: int
-                        required: true
-                        default: 1
-                    }
-
-                    // List context value (note: trailing comma allowed in HJSON)
-                    shopping_list: {
-                        type: list
-                        required: true
-                        default: [soup, apples]
-                    }
+                // String context value with default
+                author: {
+                    type: "string"
+                    required: true
+                    default: "Puerco"
                 }
+
+                // Integer context value
+                count: {
+                    type: "int"
+                    required: true
+                    default: 1
+                }
+
             }
 
             // Transformers normalize predicate data for easier policy authoring
             transformers: [
-                { id: internal:protobom }
+                { id: "internal:protobom" }
             ]
 
             // Tenets are the core policy checks
             tenets: [
                 {
                     // Check that predicates were loaded
-                    runtime: cel@v14.0
+                    runtime: "cel@v14.0"
                     code: "size(predicates) > 0"
 
                     predicates: {
-                        types: [application/protobom]
+                        types: ["application/protobom"]
                     }
                 }
 
                 {
                     // Validate SBOM metadata with outputs
-                    runtime: cel@v14.0
+                    runtime: "cel@v14.0"
 
                     // Outputs extract values from evaluation results
                     outputs: {
@@ -94,7 +93,7 @@
 
                 {
                     // Check context value (demonstrates context usage)
-                    runtime: cel@v14.0
+                    runtime: "cel@v14.0"
                     code: "context.author == \"Puerco\""
 
                     outputs: {
