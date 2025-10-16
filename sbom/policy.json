@@ -1,32 +1,55 @@
 {
-    "runtime": "cedar@v1.0.0",
     "id": "OSPS",
-    "version": "1",
+    "meta": {
+        "runtime": "cedar@v1.0.0",
+        "description": "SBOM policy set example",
+        "version": 1,
+        "enforce": "true"
+    },
+    "common": {
+        "identities": [],
+        "references": [],
+        "context": {}
+    },
     "policies": [
         {
             "id": "AC-07",
-            "version": "v0.0.1",
             "meta": {
                 "description": "The project's version control system MUST require multi-factor authentication that does not include SMS ",
                 "runtime": "cel@v0",
                 "assert_mode": "OR",
+                "version": 1,
+                "enforce": "true",
                 "controls": [
-                    { "class": "", "id": "" }
+                    {
+                        "id": "AC-07",
+                        "class": "access-control",
+                        "framework": "NIST-800-53",
+                        "title": "Multi-factor Authentication"
+                    }
                 ]
             },
             "identities": [
                 {
-                    "type": "exact",
-                    "issuer": "https://accounts.google.com/",
-                    "identity": "puerco@gmail.com"
+                    "id": "google-puerco",
+                    "sigstore": {
+                        "mode": "exact",
+                        "issuer": "https://accounts.google.com/",
+                        "identity": "puerco@gmail.com"
+                    }
                 }
             ],
             "context": {
-                "values": {
-                    "author": { "type": "string", "required": true, "default": "Puerco" },
-                    "count": { "type": "int", "required": true, "default": 1 },
-                    "shopping_list": { "type": "list", "required": true, "default": ["soup", "apples"] }
-                }
+                "author": {
+                    "type": "string",
+                    "required": true,
+                    "default": "Puerco"
+                },
+                "count": {
+                    "type": "int",
+                    "required": true,
+                    "default": 1
+                },
             },
             "transformers": [
                 { "id": "internal:protobom" }
@@ -37,12 +60,12 @@
                     "code": "size(predicates) > 0",
                     "predicates": {
                         "types": ["application/protobom"]
-                    }                    
+                    }
                 },
                 {
                     "runtime": "cel@v14.0",
                     "outputs": {
-                        "first_sbom_name": { "code": "predicates[0].data.metadata.name" } 
+                        "first_sbom_name": { "code": "predicates[0].data.metadata.name" }
                     },
                     "code": "predicates[0].data.metadata.name == \"SBOM-SPDX-08bdfa07-a9a1-404e-b892-9f45896c715a\" "
                 },
@@ -54,7 +77,7 @@
                         "context": {"code": "context"}
                     }
                 }
-            ]            
+            ]
         }
     ]
 }
