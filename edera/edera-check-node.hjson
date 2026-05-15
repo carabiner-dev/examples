@@ -1,0 +1,66 @@
+'''
+# edera-check-node
+
+Checks that the current workload is running inside an Edera Protect Xen zone
+by verifying the existence of an edera workload attestation signed by the
+zone's SPIFFE identity.
+
+## Purpose
+
+This policy verifies the runtime environment by checking for an in-toto
+attestation with predicate type `https://labs.carabiner.dev/edera/workload/v0.1`.
+The attestation must be signed using a SPIFFE SVID from the same zone, which is
+verified through the local SPIFFE Workload API socket. This ensures that the
+attestation was produced by a workload in the same trust domain and was not
+replayed from a different environment.
+
+'''
+{
+    id: edera-check-node
+    meta: {
+        description: "Verify we are running inside an Edera Protect Xen zone"
+    }
+    common: {
+        identities: [
+            {
+                id: edera-zone-identity
+                # Verify the attestation signer via the SPIFFE Workload API
+                # socket. The trust domain must match the edera trust domain
+                # ensuring the attestation comes from the same zone.
+                spiffe: {
+                    trust_domain_match: {
+                        exact: edera.dev
+                    }
+                }
+            }
+        ]
+    }
+    policies: [
+        {
+            id: edera-workload-attestation-exists
+            meta: {
+                description: "Check that an edera workload attestation exists and is signed by a SPIFFE identity in the same zone"
+                assert_mode: AND
+            }
+            identities: [
+                { ref: { id: edera-zone-identity } }
+            ]
+            tenets: [
+                {
+                    id: has-edera-attestation
+                    title: "Edera workload attestation exists"
+                    predicates: {
+                        types: ["https://labs.carabiner.dev/edera/workload/v0.1"]
+                    }
+                    code: "size(predicates) > 0"
+                    assessment: {
+                        message: "Edera Protect workload attestation found, confirming execution in a Xen zone"
+                    }
+                    error: {
+                        message: "No edera workload attestation found. This workload may not be running in an Edera Protect Xen zone."
+                    }
+                }
+            ]
+        }
+    ]
+}

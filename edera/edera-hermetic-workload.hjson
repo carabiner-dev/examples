@@ -1,0 +1,84 @@
+'''
+# edera-hermetic-workload
+
+Checks whether an Edera Protect Xen zone is running with or without network
+interfaces, enforcing hermetic (network-isolated) execution when required.
+
+## Purpose
+
+Some workloads must run in complete network isolation to prevent data
+exfiltration or supply chain attacks during build processes. This policy
+inspects the edera workload attestation for network interfaces attached to
+the zone.
+
+When the `hermetic` context value is set to `"true"`, the policy **fails** if
+any network interfaces are present — the zone is not hermetic. When set to
+`"false"`, the policy passes regardless of networking state.
+
+'''
+{
+    id: edera-hermetic-workload
+    meta: {
+        description: "Enforce hermetic (network-isolated) execution in an Edera Protect Xen zone"
+    }
+    common: {
+        identities: [
+            {
+                id: edera-zone-identity
+                spiffe: {
+                    trust_domain_match: {
+                        exact: edera.dev
+                    }
+                }
+            }
+        ]
+    }
+    policies: [
+        {
+            id: check-hermetic-zone
+            meta: {
+                description: "Verify the zone has no network interfaces when hermetic execution is required"
+                assert_mode: AND
+            }
+            context: {
+                hermetic: {
+                    type: string
+                    required: true
+                    description: "Set to 'true' to require the zone to have no network interfaces"
+                    default: "true"
+                }
+            }
+            identities: [
+                { ref: { id: edera-zone-identity } }
+            ]
+            tenets: [
+                {
+                    id: hermetic-network-check
+                    title: "Zone network isolation check"
+                    predicates: {
+                        types: ["https://labs.carabiner.dev/edera/workload/v0.1"]
+                    }
+                    code:
+                    '''
+                    context.hermetic != "true" || (
+                        has(predicates[0].data.zone) &&
+                        has(predicates[0].data.zone.network) &&
+                        has(predicates[0].data.zone.network.interfaces) &&
+                        size(predicates[0].data.zone.network.interfaces) == 0
+                    ) || (
+                        has(predicates[0].data.zone) &&
+                        (!has(predicates[0].data.zone.network) ||
+                         !has(predicates[0].data.zone.network.interfaces))
+                    )
+                    '''
+                    assessment: {
+                        message: "Zone network isolation status verified"
+                    }
+                    error: {
+                        message: "Hermetic execution required but the zone has network interfaces attached. The workload is not network-isolated."
+                    }
+                }
+            ]
+        }
+    ]
+}
