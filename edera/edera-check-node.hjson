@@ -1,5 +1,10 @@
-'''
+{
+    id: edera-check-node
+    meta: {
+        description: '''
 # edera-check-node
+
+Verify we are running inside an Edera Protect Xen zone
 
 Checks that the current workload is running inside an Edera Protect Xen zone
 by verifying the existence of an edera workload attestation signed by the
@@ -15,10 +20,6 @@ attestation was produced by a workload in the same trust domain and was not
 replayed from a different environment.
 
 '''
-{
-    id: edera-check-node
-    meta: {
-        description: "Verify we are running inside an Edera Protect Xen zone"
     }
     common: {
         identities: [

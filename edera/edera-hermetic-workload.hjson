@@ -1,5 +1,11 @@
-'''
+{
+    id: edera-hermetic-workload
+    meta: {
+        description: '''
+
 # edera-hermetic-workload
+
+Enforce hermetic (network-isolated) execution in an Edera Protect Xen zone
 
 Checks whether an Edera Protect Xen zone is running with or without network
 interfaces, enforcing hermetic (network-isolated) execution when required.
@@ -14,12 +20,7 @@ the zone.
 When the `hermetic` context value is set to `"true"`, the policy **fails** if
 any network interfaces are present — the zone is not hermetic. When set to
 `"false"`, the policy passes regardless of networking state.
-
 '''
-{
-    id: edera-hermetic-workload
-    meta: {
-        description: "Enforce hermetic (network-isolated) execution in an Edera Protect Xen zone"
     }
     common: {
         identities: [
