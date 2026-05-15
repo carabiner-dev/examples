@@ -43,9 +43,6 @@ replayed from a different environment.
                 description: "Check that an edera workload attestation exists and is signed by a SPIFFE identity in the same zone"
                 assert_mode: AND
             }
-            identities: [
-                { ref: { id: edera-zone-identity } }
-            ]
             tenets: [
                 {
                     id: has-edera-attestation

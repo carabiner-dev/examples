@@ -49,9 +49,6 @@ any network interfaces are present — the zone is not hermetic. When set to
                     default: "true"
                 }
             }
-            identities: [
-                { ref: { id: edera-zone-identity } }
-            ]
             tenets: [
                 {
                     id: hermetic-network-check
